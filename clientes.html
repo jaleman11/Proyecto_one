@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CepKit</title>
+    <link rel="stylesheet" href="CSS/inicio.css">
+    <link rel="stylesheet" href="CSS/clientes.css">
+</head>
+<body>
+    
+    <!-- Menú lateral navegable-->
+     <nav class="menu">
+        <div class="logo">
+            <img src="images/images.jpg" alt="logo de CepKit">
+        </div>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="clientes.html" class="active">Clientes</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="configuración.html">Configuración</a></li>
+        </ul>
+     </nav>
+
+     <!--Contenedor principal de la derecha-->
+     <div class="main-wrapper">
+
+        <!-- Banner superior-->
+         <header class="banner">
+            <h1>Gestión de clientes</h1>
+         </header>
+
+     <!--Contenido principal -->
+     <main class="content">
+
+        <!--Acciones y filtro-->
+        <section class="actions-bar card">
+            <input type="text" placeholder="Buscar cliente por nombre o teléfono..." class="search-input">
+            <!--Botón que abre la ventana emergente-->
+            <button class="btn btn-primary" onclick="openmodal()">+ Nuevo Cliente</button>
+        </section>
+
+        <!--Tabla de Clientes-->
+        <section class="card table-container">
+            <h2>Lista de Clientes</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Correo Electrónico</th>
+                        <th>Telefóno</th>
+                        <th>Estado</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#001</td>
+                        <td>Carlos Gómez</td>
+                        <td>carlos.gomez@gmail.com</td>
+                        <td>+57 300 123 4567</td>
+                        <td><spam class="badge badge-success">Activo</spam></td>
+                        <td>
+                            <button class="btn-icon">✏️ </button>
+                        </td>
+                        <td>
+                            <button class="btn-icon btn-danger">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#002</td>
+                        <td>Maria Rodriguez</td>
+                        <td>maria.r@gmail.com</td>
+                        <td>+57 311 987 6543</td>
+                        <td><spam class="badge badge-success">Activo</spam></td>
+                        <td>
+                            <button class="btn-icon">✏️ </button>
+                        </td>
+                        <td>
+                            <button class="btn-icon btn-danger">🗑️</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+
+     </main>
+     <!--Pie de página-->
+     <footer>
+        <p>$copy; 2026 CepKit. Todos los derechos reservados</p>
+     </footer>
+
+     </div>
+
+     <!--Ventana Emergente (Modal) para registrar Cliente-->
+     <div id="modalCliente" class="modal">
+        <div class="model-header">
+            <h2>Registar Nuevo Cliente</h2>
+            <spam class="close-btn" onclick="closeModal()">&times;</spam>
+        </div>
+
+        <form id="form-cliente" onsubmit="guardarCliente(event)">
+            <div class="modal.body">
+                <label for="nombre">Nombre Completo *</label>
+                <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required>
+            </div>
+            
+        </form>
+     </div>
+</body>
+</html>
