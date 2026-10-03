@@ -107,8 +107,33 @@
                 <label for="nombre">Nombre Completo *</label>
                 <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required>
             </div>
-            
         </form>
      </div>
+
+     <!--Script sencillo para interactuar con la vnetana-->
+     <script>
+        function openmodal() {
+            document.getElementById("modalCliente").style.display = "flex";
+        }
+
+        function closeModal(){
+            document.getElementById("modalCliente").style.display = "none";
+        }
+
+        //Cierra la ventana si se hace cick fuera del contenido
+        window.onclick= function(event){
+            const modal = document.getElementById("modalCliente");
+            if(event.target === modal) {
+                closeModal()
+            }
+        }
+
+        function guardarCliente(event) {
+            event.preventDefault();
+            alert("¡Cliente guardado exitosamente");
+            closeModal();
+            document.getElementById("formCliente").resert();
+        }
+     </script>
 </body>
 </html>
